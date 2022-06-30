@@ -1,0 +1,27 @@
+.CardFooter{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(251, 227, 231);
+    height: 65px;
+}
+.FooterOderWrapper{
+    display: flex;
+    width: 150px;
+    height: 65px;
+}
+.FooterOderRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 65px;
+    border-right: 1px solid rgb(211, 202, 202);
+}
+.FooterBusket{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 65px;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Menu(props) {
+function MenuButton(props) {
   return (
     <div {...props} >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -11,4 +11,4 @@ function Menu(props) {
   );
 }
 
-export default Menu
+export default MenuButton

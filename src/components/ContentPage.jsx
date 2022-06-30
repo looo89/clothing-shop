@@ -1,7 +1,8 @@
 import React  from "react";
-import CardItem from "./CardItem";
 
 import cl from './../App.module.css'
+import CardItem from "./Card/CardItem";
+import Menu from "./Card/Menu/Menu";
 
 function ContentPage(props) {
 
@@ -25,6 +26,25 @@ function ContentPage(props) {
             name: "Red Skirt",
             price: "270",
         },
+        {
+          id: "4",
+          categoryId: "1",
+          name: "Red Dress",
+          price: "340",
+          img: 'https://assets.ajio.com/medias/sys_master/root/20210403/bsM4/606867797cdb8c1f147522ca/-473Wx593H-461088032-blue-MODEL.jpg'
+      },
+      {
+          id: "5",
+          categoryId: "1",
+          name: "Yellow Dress",
+          price: "340",
+      },
+      {
+          id: "6",
+          categoryId: "2",
+          name: "Red Skirt",
+          price: "270",
+      },
     ]
    
 
@@ -41,14 +61,7 @@ function ContentPage(props) {
        />)}
       </div>
       {props.menuActive &&
-      
-        <div className={cl.Menu}>
-          <h3>Меню</h3>
-          <div>пункт меню 1</div>
-          <div>пункт меню 2</div>
-          <div>пункт меню 3</div>
-          <div>пункт меню 4</div>
-        </div>
+        <Menu/>
       }
     </div>
    
