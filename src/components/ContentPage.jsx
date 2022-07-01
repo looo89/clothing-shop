@@ -1,67 +1,32 @@
 import React  from "react";
 
 import cl from './../App.module.css'
-import CardItem from "./Card/CardItem";
-import Menu from "./Card/Menu/Menu";
+import Menu from "./Menu/Menu";
+import Dress from "./Dress";
+import Skirt from "./Skirt";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./Home/HomePage";
+import Panama from "./Panama";
+import Bags from "./Bags";
 
 function ContentPage(props) {
 
-    const clData=[
-        {
-            id: "1",
-            categoryId: "1",
-            name: "Red Dress",
-            price: "340",
-            img: 'https://assets.ajio.com/medias/sys_master/root/20210403/bsM4/606867797cdb8c1f147522ca/-473Wx593H-461088032-blue-MODEL.jpg'
-        },
-        {
-            id: "2",
-            categoryId: "1",
-            name: "Yellow Dress",
-            price: "340",
-        },
-        {
-            id: "3",
-            categoryId: "2",
-            name: "Red Skirt",
-            price: "270",
-        },
-        {
-          id: "4",
-          categoryId: "1",
-          name: "Red Dress",
-          price: "340",
-          img: 'https://assets.ajio.com/medias/sys_master/root/20210403/bsM4/606867797cdb8c1f147522ca/-473Wx593H-461088032-blue-MODEL.jpg'
-      },
-      {
-          id: "5",
-          categoryId: "1",
-          name: "Yellow Dress",
-          price: "340",
-      },
-      {
-          id: "6",
-          categoryId: "2",
-          name: "Red Skirt",
-          price: "270",
-      },
-    ]
    
 
   return (
     <div>
-       <div className={cl.Wrapper}>
-       {clData.map(item=><CardItem
-        key={item.id}
-         id={item.id}
-         categoryId={item.categoryId}
-         name={item.name}
-         price={item.price}
-         img={item.img}
-       />)}
+      <div className={cl.Wrapper}>
+          <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/dress' element={<Dress/>}/>
+            <Route path='/skirt' element={<Skirt/>}/>
+            <Route path='/panama' element={<Panama/>}/>
+            <Route path='/bags' element={<Bags/>}/>
+          </Routes>
+        
       </div>
       {props.menuActive &&
-        <Menu/>
+        <Menu />
       }
     </div>
    

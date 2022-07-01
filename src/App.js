@@ -9,10 +9,9 @@ function App() {
   const toggleMenu=()=>{
     setMenuActive(!menuActive)
   }
-
   return (
     <div>
-      <Header showMenu={toggleMenu}/>
+      <Header toggleMenu={toggleMenu}/>
       <ContentPage  menuActive={menuActive}/>
     </div>
   );

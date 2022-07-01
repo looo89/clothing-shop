@@ -7,7 +7,7 @@ import BasketButton from "../IU/BasketButton";
 function Header(props) {
   return (
     <div className={cl.Header} >
-        <MenuButton className={cl.MenuButton} onClick={props.showMenu}/>
+        <MenuButton className={cl.MenuButton} onClick={props.toggleMenu}/>
         <div>
           <BasketButton className={cl.BasketButton}/>
         </div>
