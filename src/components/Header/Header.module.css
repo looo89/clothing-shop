@@ -8,12 +8,19 @@
     height: 40px;
     background-color: grey;
 }
+.HeaderButtonContainer{
+    display: flex;
+}
 
-
-.BasketButton{
+.HeaderButton{
     cursor: pointer;
     width: 30px;
     height: 30px;
+    margin-left: 5px;
+}
+.BasketButtonLink{
+    text-decoration: none;
+    color: black;
 }
 
 

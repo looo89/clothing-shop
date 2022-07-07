@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./Home/HomePage";
 import Panama from "./Panama";
 import Bags from "./Bags";
+import BasketPage from "./BasketPage/BasketPage";
 
 function ContentPage(props) {
 
@@ -22,6 +23,7 @@ function ContentPage(props) {
             <Route path='/skirt' element={<Skirt/>}/>
             <Route path='/panama' element={<Panama/>}/>
             <Route path='/bags' element={<Bags/>}/>
+            <Route path='/basket' element={<BasketPage/>}/>
           </Routes>
         
       </div>
