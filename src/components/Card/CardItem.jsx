@@ -23,7 +23,7 @@ function CardItem({id, categoryId,name, price, img}) {
             <div>Цена: {price}</div>
         </div>
         { IsShowFooter &&
-          <CardFooter/>
+          <CardFooter  id={id} categoryId={categoryId} name={name} price={price}/>
         }
         
 

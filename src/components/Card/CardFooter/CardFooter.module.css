@@ -18,10 +18,14 @@
     border-right: 1px solid rgb(211, 202, 202);
 }
 .FooterBusket{
-    
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 150px;
     height: 65px;
+}
+.FooterLink{
+    text-decoration: none;
+    color: #000;
 }

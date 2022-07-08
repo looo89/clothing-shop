@@ -1,9 +1,4 @@
-import { fetchClosesApi } from "../../api"
-
-const FETCH_CLOTHES_START='FETCH_CLOTHES_START'
-const FETCH_CLOTHES_SUCCES='FETCH_CLOTHES_SUCCES'
-const FETCH_CLOTHES_FAIL='FETCH_CLOTHES_FAIL'
-
+const ADD_IN_BASKET= 'ADD_IN_BASKET'
 
 const initialState={
     data: {
@@ -180,30 +175,32 @@ const initialState={
               img: "https://sneakerstudio.ru/rus_pl_ZHENSKAIA-PANAMKA-adidas-Originals-Adicolor-Trefoil-Bucket-Hat-HD9711-1034235_2.jpg"
           },
         ],
-    }
+    },
+    basket:[
+        
+    ]
 }
 
 export  const clothesReduser=(state= initialState, action)=>{
-    return state
-}
-
-
-export const fetchCloses =()=>async dispatch =>{
-    dispatch({
-        type: FETCH_CLOTHES_START
-    })
-    try{
-        const clothes= await fetchClosesApi()
-        dispatch({
-            type: FETCH_CLOTHES_SUCCES,
-            payload: clothes
-        })
-    } catch(err) {
-        dispatch({
-            type: FETCH_CLOTHES_FAIL,
-            payload: err,
-            error: true
-        })
-
+    switch(action.type) {
+        case ADD_IN_BASKET : {
+            return{ ...state,
+                data: {...state.data},
+                basket: [...state.basket, 
+                    {
+                        id: action.payload.id,
+                        categoryId: action.payload.categoryId,
+                        name: action.payload.name,
+                        price: action.payload.price,
+                        count: action.payload.count
+                    }
+                ]
+            }
+        }
+    default: return state
     }
 }
+
+
+
+export const addInBasketAction=(payload)=>({type: ADD_IN_BASKET, payload})
