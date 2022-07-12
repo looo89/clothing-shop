@@ -1,4 +1,6 @@
 const ADD_IN_BASKET= 'ADD_IN_BASKET'
+const UPDATE_BASKET_ITEM='UPDATE_BASKET_ITEM'
+
 
 const initialState={
     data: {
@@ -44,28 +46,28 @@ const initialState={
         ],
         skirt: [
             {
-                id: "1",
+                id: "7",
                 categoryId: "2",
                 name: "Black Skirt",
                 price: "340",
                 img: 'https://romans-cdn.rlab.net/images/extralarge/867a31f0-1921-433a-84aa-466f16955dca.jpg'
             },
             {
-                id: "2",
+                id: "8",
                 categoryId: "2",
                 name: "Yellow Skirt",
                 price: "340",
                 img: 'https://media1.popsugar-assets.com/files/thumbor/GD9QrliX-3MsBtvHwf3MekvwroI/fit-in/550x550/filters:format_auto-!!-:strip_icc-!!-/2021/04/22/898/n/1922564/0ef7e1c46081ddb70c03e1.15128160_/i/Cute-Skirts-Amazon.jpg'
             },
             {
-                id: "3",
+                id: "9",
                 categoryId: "2",
                 name: "Red Skirt",
                 price: "270",
                 img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn57XbQ-9U68myWH298kctrQhkGXsMvrRBmw&usqp=CAU'
             },
             {
-              id: "4",
+              id: "10",
               categoryId: "2",
               name: "Red Skirt",
               price: "340",
@@ -73,14 +75,14 @@ const initialState={
               
             },
             {
-                id: "5",
+                id: "11",
                 categoryId: "2",
                 name: "Pink Skirt",
                 price: "340",
                 img: 'https://img.ltwebstatic.com/images2_pi/2019/07/12/15629164243969762281.webp'
             },
             {
-                id: "6",
+                id: "12",
                 categoryId: "2",
                 name: "Black Skirt",
                 price: "270",
@@ -89,42 +91,42 @@ const initialState={
         ],
         bags: [
             {
-                id: "1",
+                id: "13",
                 categoryId: "4",
                 name: "Сумка",
                 price: "340",
                 img: "https://opt-1822404.ssl.1c-bitrix-cdn.ru/upload/catalog//YG%205340819%20BDA/YG%205340819%20BDA%201.jpg?1649337516523123"
             },
             {
-                id: "2",
+                id: "14",
                 categoryId: "4",
                 name: "Сумка",
                 price: "340",
                 img: "https://opt-1822404.ssl.1c-bitrix-cdn.ru/upload/catalog//YG%205340819%20BDA/YG%205340819%20BDA%201.jpg?1649337516523123"    
             },
             {
-                id: "3",
+                id: "15",
                 categoryId: "4",
                 name: "Сумка",
                 price: "270",
                 img: "https://opt-1822404.ssl.1c-bitrix-cdn.ru/upload/catalog//YG%205340819%20BDA/YG%205340819%20BDA%201.jpg?1649337516523123"
             },
             {
-              id: "4",
+              id: "16",
               categoryId: "4",
               name: "Сумка",
               price: "340",
               img: "https://opt-1822404.ssl.1c-bitrix-cdn.ru/upload/catalog//YG%205340819%20BDA/YG%205340819%20BDA%201.jpg?1649337516523123"
             },
           {
-              id: "5",
+              id: "17",
               categoryId: "4",
               name: "Сумка",
               price: "340",
               img: "https://opt-1822404.ssl.1c-bitrix-cdn.ru/upload/catalog//YG%205340819%20BDA/YG%205340819%20BDA%201.jpg?1649337516523123"
           },
           {
-              id: "6",
+              id: "18",
               categoryId: "4",
               name: "Сумка",
               price: "270",
@@ -133,42 +135,42 @@ const initialState={
         ],
         panama: [
             {
-                id: "1",
+                id: "19",
                 categoryId: "3",
                 name: "Panama",
                 price: "340",
                 img: "https://sneakerstudio.ru/rus_pl_ZHENSKAIA-PANAMKA-adidas-Originals-Adicolor-Trefoil-Bucket-Hat-HD9711-1034235_2.jpg"
             },
             {
-                id: "2",
+                id: "20",
                 categoryId: "3",
                 name: "Yellow Panama",
                 price: "340",
                 img: "https://sneakerstudio.ru/rus_pl_ZHENSKAIA-PANAMKA-adidas-Originals-Adicolor-Trefoil-Bucket-Hat-HD9711-1034235_2.jpg"
             },
             {
-                id: "3",
-                categoryId: "3",
+                id: "21",
+                categoryId: "22",
                 name: "Red Panama",
                 price: "270",
                 img: "https://sneakerstudio.ru/rus_pl_ZHENSKAIA-PANAMKA-adidas-Originals-Adicolor-Trefoil-Bucket-Hat-HD9711-1034235_2.jpg"
             },
             {
-              id: "4",
+              id: "23",
               categoryId: "3",
               name: "Panama",
               price: "340",
               img: "https://sneakerstudio.ru/rus_pl_ZHENSKAIA-PANAMKA-adidas-Originals-Adicolor-Trefoil-Bucket-Hat-HD9711-1034235_2.jpg"
             },
           {
-              id: "5",
+              id: "24",
               categoryId: "3",
               name: "Panama",
               price: "340",
               img: "https://sneakerstudio.ru/rus_pl_ZHENSKAIA-PANAMKA-adidas-Originals-Adicolor-Trefoil-Bucket-Hat-HD9711-1034235_2.jpg"
           },
           {
-              id: "6",
+              id: "25",
               categoryId: "3",
               name: "Panama",
               price: "270",
@@ -186,21 +188,40 @@ export  const clothesReduser=(state= initialState, action)=>{
         case ADD_IN_BASKET : {
             return{ ...state,
                 data: {...state.data},
-                basket: [...state.basket, 
+                basket: [...state.basket,
                     {
                         id: action.payload.id,
                         categoryId: action.payload.categoryId,
                         name: action.payload.name,
                         price: action.payload.price,
-                        count: action.payload.count
+                        count: action.payload.count,
+                        img: action.payload.img
                     }
                 ]
             }
         }
+        case UPDATE_BASKET_ITEM: {
+            return { ...state,
+                data: {...state.data},
+                basket: state.basket.map(el=>{
+                    if(el.id===action.payload.id)
+                    return {
+                        ...el,
+                        count: action.payload.count
+                      }
+                
+                    return el;
+                })
+            }
+        }
+       
+    
     default: return state
     }
+    
 }
 
 
 
 export const addInBasketAction=(payload)=>({type: ADD_IN_BASKET, payload})
+export const updateBasketItem=(payload)=>({type: UPDATE_BASKET_ITEM, payload})

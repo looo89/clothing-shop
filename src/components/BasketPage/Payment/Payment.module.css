@@ -1,0 +1,20 @@
+.Payment{
+    width: 320px;
+    height: 200px;
+    border: 2px solid greenyellow;
+    border-radius: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+.PaymentButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 20px;
+    border: 3px solid greenyellow;
+    background-color: rgb(184, 252, 82);
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 1px;
+}

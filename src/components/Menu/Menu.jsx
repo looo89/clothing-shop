@@ -4,10 +4,10 @@ import cl from './Menu.module.css'
 import { Link } from "react-router-dom";
 
 
-function Menu() {
+function Menu(props) {
 
   return (
-    <div>
+    <div onMouseLeave={props.toggleMenu}>
      <div className={cl.Menu}>
           <Link className={cl.Link} to="/skirt">Юбки</Link>
           <Link className={cl.Link} to="/dress">Платья</Link>

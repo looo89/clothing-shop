@@ -28,7 +28,7 @@ function ContentPage(props) {
         
       </div>
       {props.menuActive &&
-        <Menu />
+        <Menu toggleMenu={props.toggleMenu}/>
       }
     </div>
    

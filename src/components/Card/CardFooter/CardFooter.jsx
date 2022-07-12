@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import cl from './CardFooter.module.css'
 
-import { addInBasketAction } from "../../../store/reducers/clothesReduser";
-import { useDispatch } from "react-redux";
+import { addInBasketAction, updateBasketItem } from "../../../store/reducers/clothesReduser";
+import { useDispatch, useSelector } from "react-redux";
 
 
 function CardFooter({id, categoryId,name, price, img}) {
   
+  const basket= useSelector(state=> state.clothesReduser.basket)
   const dispatch=useDispatch()
-  const [count, setCount]= useState(0)
+  const [count, setCount]= useState(1)
   const [clicked, setClicked] = useState(false)
 
 
@@ -22,15 +23,15 @@ function CardFooter({id, categoryId,name, price, img}) {
       setCount(count-1)
     }  
   }
-  function handleClick() {
-    setClicked(!clicked);
-}
   
   const addProductInBasket=()=>{
-    if(count>0){
-      dispatch(addInBasketAction({id, categoryId, name, price, count}))
-      handleClick()
+    const addedProduct=basket.find((item)=>item.id===id)
+    if(addedProduct){
+      dispatch(updateBasketItem({id, count}))
+    } else{
+      dispatch(addInBasketAction({id, categoryId, name, price, count, img}))
     }
+    setClicked(true)
   }
 
   
@@ -38,15 +39,15 @@ function CardFooter({id, categoryId,name, price, img}) {
   return (
     <div className={cl.CardFooter}>
         <div className={cl.FooterOderWrapper}> 
-            <div className={cl.FooterOderRow} onClick={addCount}>
-              +
-            </div>
-            <div className={cl.FooterOderRow}>
-              {count}
-            </div>
-            <div className={cl.FooterOderRow} onClick={deleteCount}>
-              -
-            </div>
+          <div className={cl.FooterOderRow} onClick={deleteCount}>
+            -
+          </div>
+          <div className={cl.FooterOderRow}>
+            {count}
+          </div>
+          <div className={cl.FooterOderRow} onClick={addCount}>
+            +
+          </div>
         </div>
         
         <div className={cl.FooterBusket} onClick={addProductInBasket}>     
