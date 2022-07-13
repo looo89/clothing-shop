@@ -4,12 +4,15 @@ import ItemList from "../ItemList/ItemList"
 import cl from './BasketPageWrapper.module.css'
 
 
-function BasketPageWrapper(props) {
 
+import { useSelector } from "react-redux";
+
+function BasketPageWrapper(props) {
+  const basket= useSelector(state=> state.clothesReduser.basket)
   return (
     <div className={cl.BasketPageWrapper}>
-      <ItemList/>
-      <Payment/>
+      <ItemList basket={basket}/>
+      <Payment />
     </div>
   );
 }

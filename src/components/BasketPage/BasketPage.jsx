@@ -9,7 +9,7 @@ function BasketPage(props) {
 
   return (
     <div className={cl.BasketPage}>
-      <h1>BasketPage</h1>
+      <h1>Оформление заказа</h1>
       <BasketPageWrapper/>
     </div>
   );

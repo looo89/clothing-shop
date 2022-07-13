@@ -1,5 +1,9 @@
 const ADD_IN_BASKET= 'ADD_IN_BASKET'
 const UPDATE_BASKET_ITEM='UPDATE_BASKET_ITEM'
+const ADD_ONE_PRODUCT='ADD_ONE_PRODUCT'
+const DELETE_ONE_PRODUCT='DELETE_ONE_PRODUCT'
+const DELETE_PRODUCT_IN_BASKET='DELETE_PRODUCT_IN_BASKET'
+const GET_TOTAL_COUNT='GET_TOTAL_COUNT'
 
 
 const initialState={
@@ -180,7 +184,9 @@ const initialState={
     },
     basket:[
         
-    ]
+    ],
+    totalCount: 0,
+    totalPrice: 0,
 }
 
 export  const clothesReduser=(state= initialState, action)=>{
@@ -204,17 +210,64 @@ export  const clothesReduser=(state= initialState, action)=>{
             return { ...state,
                 data: {...state.data},
                 basket: state.basket.map(el=>{
-                    if(el.id===action.payload.id)
-                    return {
-                        ...el,
-                        count: action.payload.count
-                      }
-                
-                    return el;
+                    if(el.id===action.payload.id){
+                        return {
+                            ...el,
+                            count: action.payload.count + el.count
+                          }
+                    } else {
+                        return el;
+                    }
                 })
             }
         }
-       
+        case ADD_ONE_PRODUCT: {
+            return { ...state,
+                data: {...state.data},
+                basket: state.basket.map(el=>{
+                    if(el.id===action.payload.id ){
+                        return {
+                            ...el,
+                            count: el.count+1
+                          }
+                    } else {
+                        return el;
+                    }
+                })
+            }
+        }
+
+       case DELETE_ONE_PRODUCT: {
+            return { ...state,
+                data: {...state.data},
+                basket: state.basket.map(el=>{
+                    if(el.id===action.payload.id && el.count!==0){
+                        return {
+                            ...el,
+                            count: el.count-1
+                          }
+                    } else {
+                        return el;
+                    }
+                })
+            }
+        }
+        case DELETE_PRODUCT_IN_BASKET: {
+            return { ...state,
+                data: {...state.data},
+                basket: state.basket.filter(el=>el.id!==action.payload.id)
+            }
+        }
+        case GET_TOTAL_COUNT: {
+            return { ...state,
+                data: {...state.data},
+                basket: {...state.basket},
+                totalCount: state.basket.reduce((sum, item)=>{
+                    return sum + item.count
+                })
+                
+            }
+        }
     
     default: return state
     }
@@ -225,3 +278,7 @@ export  const clothesReduser=(state= initialState, action)=>{
 
 export const addInBasketAction=(payload)=>({type: ADD_IN_BASKET, payload})
 export const updateBasketItem=(payload)=>({type: UPDATE_BASKET_ITEM, payload})
+export const addOneProduct=(payload)=>({type: ADD_ONE_PRODUCT, payload})
+export const deleteOneProduct=(payload)=>({type: DELETE_ONE_PRODUCT, payload})
+export const deleteProductInBasket=(payload)=>({type: DELETE_PRODUCT_IN_BASKET, payload})
+export const getTotalCount=()=>({type: GET_TOTAL_COUNT})
