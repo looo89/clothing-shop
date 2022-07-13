@@ -15,7 +15,7 @@ function ItemProduct({name, count, price, img, id, categoryId}) {
     dispatch(deleteOneProduct({id}))
   }
   const deleteAllProduct=()=>{
-    dispatch(deleteProductInBasket({id}))
+    dispatch(deleteProductInBasket({id, count}))
   }
 
 

@@ -1,22 +1,20 @@
 import React from "react";
 import cl from './Payment.module.css'
-import { useDispatch } from 'react-redux'
-import { getTotalCount } from "../../../store/reducers/clothesReduser";
+import { useSelector } from 'react-redux'
 
 
 
 function Payment() {
 
-  // const dispatch=useDispatch()
-
-  // const getAllCount=()=>{
-  //   dispatch(getTotalCount)
- // }
+  const totalCount=useSelector(state=> state.clothesReduser.totalCount)
+  
+    
+ 
 
   return (
     <div className={cl.Payment}>
        <h2>Всего</h2>
-       <div> </div>
+       <div>Count : {totalCount}</div>
        <div>Итого  0 рублей</div>
        <div className={cl.PaymentButton}>ОПЛАТИТЬ</div>
     </div>

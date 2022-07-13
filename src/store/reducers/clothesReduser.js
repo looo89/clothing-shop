@@ -1,9 +1,10 @@
+
+
 const ADD_IN_BASKET= 'ADD_IN_BASKET'
 const UPDATE_BASKET_ITEM='UPDATE_BASKET_ITEM'
 const ADD_ONE_PRODUCT='ADD_ONE_PRODUCT'
 const DELETE_ONE_PRODUCT='DELETE_ONE_PRODUCT'
 const DELETE_PRODUCT_IN_BASKET='DELETE_PRODUCT_IN_BASKET'
-const GET_TOTAL_COUNT='GET_TOTAL_COUNT'
 
 
 const initialState={
@@ -203,7 +204,8 @@ export  const clothesReduser=(state= initialState, action)=>{
                         count: action.payload.count,
                         img: action.payload.img
                     }
-                ]
+                ],
+                totalCount: state.totalCount + action.payload.count
             }
         }
         case UPDATE_BASKET_ITEM: {
@@ -218,7 +220,9 @@ export  const clothesReduser=(state= initialState, action)=>{
                     } else {
                         return el;
                     }
-                })
+                }),
+                
+                totalCount: state.totalCount + 1
             }
         }
         case ADD_ONE_PRODUCT: {
@@ -233,7 +237,9 @@ export  const clothesReduser=(state= initialState, action)=>{
                     } else {
                         return el;
                     }
-                })
+                }),
+                
+                totalCount: state.totalCount + 1
             }
         }
 
@@ -249,23 +255,15 @@ export  const clothesReduser=(state= initialState, action)=>{
                     } else {
                         return el;
                     }
-                })
+                }),
+                totalCount: state.totalCount -1           
             }
         }
         case DELETE_PRODUCT_IN_BASKET: {
             return { ...state,
                 data: {...state.data},
-                basket: state.basket.filter(el=>el.id!==action.payload.id)
-            }
-        }
-        case GET_TOTAL_COUNT: {
-            return { ...state,
-                data: {...state.data},
-                basket: {...state.basket},
-                totalCount: state.basket.reduce((sum, item)=>{
-                    return sum + item.count
-                })
-                
+                basket: state.basket.filter(el=>el.id!==action.payload.id),
+                totalCount: state.totalCount + action.payload.count
             }
         }
     
@@ -281,4 +279,3 @@ export const updateBasketItem=(payload)=>({type: UPDATE_BASKET_ITEM, payload})
 export const addOneProduct=(payload)=>({type: ADD_ONE_PRODUCT, payload})
 export const deleteOneProduct=(payload)=>({type: DELETE_ONE_PRODUCT, payload})
 export const deleteProductInBasket=(payload)=>({type: DELETE_PRODUCT_IN_BASKET, payload})
-export const getTotalCount=()=>({type: GET_TOTAL_COUNT})
