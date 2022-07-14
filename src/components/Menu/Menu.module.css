@@ -2,11 +2,11 @@
 .Menu{
 
     position: absolute;
-    padding-top: 20px;
+    padding-top: 40px;
     display: block;
     width: 300px;
-    height: 450px;
-    top: 40px;
+    height: 320px;
+    top: 60px;
     background-color: pink;
 }
 .Link{
@@ -14,7 +14,5 @@
     padding: 15px;
     display: flex;
     justify-content: center;
-
-    color: purple;
-    
+    color: purple;   
 }

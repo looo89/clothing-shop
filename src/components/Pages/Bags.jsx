@@ -1,15 +1,12 @@
 import React  from "react";
 
-import cl from './../App.module.css'
-import CardItem from "./Card/CardItem";
-
+import cl from './Pages.module.css'
+import CardItem from "../Card/CardItem";
 import { useSelector } from "react-redux";
 
-function Panama(props) {
-
-    
-  const clData= useSelector(state=> state.clothesReduser.data.panama) 
-   
+function Bags(props) {
+  
+  const clData= useSelector(state=> state.clothesReduser.data.bags) 
 
   return (
     <div>
@@ -22,11 +19,10 @@ function Panama(props) {
          price={item.price}
          img={item.img}
        />)}
-      </div>
-      
+      </div>  
     </div>
    
   );
 }
 
-export default Panama;
+export default Bags;

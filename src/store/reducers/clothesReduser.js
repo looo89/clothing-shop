@@ -205,7 +205,8 @@ export  const clothesReduser=(state= initialState, action)=>{
                         img: action.payload.img
                     }
                 ],
-                totalCount: state.totalCount + action.payload.count
+                totalCount: state.totalCount + action.payload.count,
+                totalPrice: +state.totalPrice + +(action.payload.count*action.payload.price)
             }
         }
         case UPDATE_BASKET_ITEM: {
@@ -216,13 +217,15 @@ export  const clothesReduser=(state= initialState, action)=>{
                         return {
                             ...el,
                             count: action.payload.count + el.count
+
                           }
                     } else {
                         return el;
                     }
                 }),
                 
-                totalCount: state.totalCount + 1
+                totalCount: state.totalCount + action.payload.count,
+                totalPrice: +state.totalPrice + +(action.payload.count*action.payload.price)
             }
         }
         case ADD_ONE_PRODUCT: {
@@ -239,7 +242,8 @@ export  const clothesReduser=(state= initialState, action)=>{
                     }
                 }),
                 
-                totalCount: state.totalCount + 1
+                totalCount: state.totalCount + 1,
+                totalPrice: +state.totalPrice + +action.payload.price
             }
         }
 
@@ -256,14 +260,16 @@ export  const clothesReduser=(state= initialState, action)=>{
                         return el;
                     }
                 }),
-                totalCount: state.totalCount -1           
+                totalCount: state.totalCount -1 ,
+                totalPrice: state.totalPrice - action.payload.price          
             }
         }
         case DELETE_PRODUCT_IN_BASKET: {
             return { ...state,
                 data: {...state.data},
                 basket: state.basket.filter(el=>el.id!==action.payload.id),
-                totalCount: state.totalCount + action.payload.count
+                totalCount: state.totalCount - action.payload.count,
+                totalPrice: state.totalPrice - (action.payload.count*action.payload.price)
             }
         }
     

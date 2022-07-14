@@ -9,13 +9,17 @@ function ItemProduct({name, count, price, img, id, categoryId}) {
   const dispatch=useDispatch()
 
   const addProduct=()=>{
-    dispatch(addOneProduct({id}))
+    dispatch(addOneProduct({id, price}))
   }
   const deleteProduct=()=>{
-    dispatch(deleteOneProduct({id}))
+    if (count===1){
+      dispatch(deleteProductInBasket({id, count, price}))
+    } else {
+      dispatch(deleteOneProduct({id, price}))
+    }
   }
   const deleteAllProduct=()=>{
-    dispatch(deleteProductInBasket({id, count}))
+    dispatch(deleteProductInBasket({id, count, price}))
   }
 
 
@@ -24,10 +28,8 @@ function ItemProduct({name, count, price, img, id, categoryId}) {
       <div className={cl.ImgWrapper}>
         <img src={img} alt='gg'/>
       </div>
-      <div className={cl.DescriptionWrapper}>
-        <div >{name}</div>
-      </div>
       <div className={cl.PayWrapper}>
+        <div >{name}</div>
         <div>{`${price*count}`} руб</div>
         <div>{count} штуки</div>
         <div className={cl.AddButtonWrapper}>

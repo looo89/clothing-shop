@@ -1,12 +1,12 @@
 import React  from "react";
-
-import cl from './../App.module.css'
-import CardItem from "./Card/CardItem";
 import { useSelector } from "react-redux";
+import CardItem from "../Card/CardItem";
 
-function Bags(props) {
+import cl from './Pages.module.css';
+
+function Dress(props) {
   
-  const clData= useSelector(state=> state.clothesReduser.data.bags) 
+  const clData= useSelector(state=> state.clothesReduser.data.dress)   
 
   return (
     <div>
@@ -26,4 +26,4 @@ function Bags(props) {
   );
 }
 
-export default Bags;
+export default Dress;

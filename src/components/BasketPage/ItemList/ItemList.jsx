@@ -9,7 +9,6 @@ function ItemList({basket}) {
 
   return (
     <div className={cl.List}>
-        item list
         {
           basket.map(b=>
             <ItemProduct key={b.id+ b.name}

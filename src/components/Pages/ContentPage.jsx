@@ -1,18 +1,17 @@
 import React  from "react";
 
-import cl from './../App.module.css'
-import Menu from "./Menu/Menu";
+import cl from './Pages.module.css'
+import { Routes, Route } from "react-router-dom";
 import Dress from "./Dress";
 import Skirt from "./Skirt";
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./Home/HomePage";
 import Panama from "./Panama";
 import Bags from "./Bags";
-import BasketPage from "./BasketPage/BasketPage";
+import HomePage from "./../Home/HomePage";
+import BasketPage from "./../BasketPage/BasketPage";
+import Menu from "./../Menu/Menu"
+
 
 function ContentPage(props) {
-
-   
 
   return (
     <div>

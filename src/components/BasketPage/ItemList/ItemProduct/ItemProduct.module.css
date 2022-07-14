@@ -1,7 +1,9 @@
 .ItemWrapper{
     display: flex;
+    justify-content: start;
     height: 180px;
-    width: 520px;
+    max-width: 720px;
+    min-width: 320px;
     border: 1px solid grey;
     margin: 10px;
     border-radius: 3px;
@@ -15,12 +17,13 @@
     width: 100%;  
     height: 100%;
 }
-.DescriptionWrapper{
-    height: 180px;
-    width: 250px;
+.PayWrapper{
+    margin-left: 10px;
 }
+
 .AddButtonWrapper{
     display: flex;
+
 }
 .AddButton{
     display: flex;

@@ -1,13 +1,13 @@
 import React  from "react";
+
+import cl from './Pages.module.css';
 import { useSelector } from "react-redux";
+import CardItem from "../Card/CardItem";
 
-import cl from './../App.module.css'
-import CardItem from "./Card/CardItem";
+function Skirt(props) {
 
-function Dress(props) {
+  const clData= useSelector(state=> state.clothesReduser.data.skirt) 
   
-  const clData= useSelector(state=> state.clothesReduser.data.dress)   
-
   return (
     <div>
        <div className={cl.Wrapper}>
@@ -20,10 +20,9 @@ function Dress(props) {
          img={item.img}
        />)}
       </div>
-      
     </div>
    
   );
 }
 
-export default Dress;
+export default Skirt;

@@ -27,7 +27,7 @@ function CardFooter({id, categoryId,name, price, img}) {
   const addProductInBasket=()=>{
     const addedProduct=basket.find((item)=>item.id===id)
     if(addedProduct){
-      dispatch(updateBasketItem({id, count}))
+      dispatch(updateBasketItem({id, count, price}))
     } else{
       dispatch(addInBasketAction({id, categoryId, name, price, count, img}))
     }

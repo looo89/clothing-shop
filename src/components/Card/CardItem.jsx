@@ -1,5 +1,5 @@
 import React, { useState }  from "react";
-import cl from './../../App.module.css'
+import cl from './CardItem.module.css'
 import CardFooter from "./CardFooter/CardFooter";
 
 function CardItem({id, categoryId,name, price, img}) {
@@ -22,8 +22,10 @@ function CardItem({id, categoryId,name, price, img}) {
             <div>{name}</div>
             <div>Цена: {price}</div>
         </div>
-        { IsShowFooter &&
-          <CardFooter  id={id} categoryId={categoryId} name={name} price={price} img={img}/>
+        { IsShowFooter 
+          ?
+            <CardFooter  id={id} categoryId={categoryId} name={name} price={price} img={img}/>
+          : <div className={cl.Footer}></div>
         }
         
 

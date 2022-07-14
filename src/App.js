@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ContentPage from "./components/ContentPage";
 import Header from "./components/Header/Header";
+import ContentPage from "./components/Pages/ContentPage";
 
 
 
@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <div>
-      <Header toggleMenu={toggleMenu}/>
+      <Header toggleMenu={toggleMenu} />
       <ContentPage  menuActive={menuActive} toggleMenu={toggleMenu}/>
     </div>
   );
