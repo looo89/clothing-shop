@@ -1,6 +1,5 @@
 import React  from "react";
 
-import cl from './Pages.module.css'
 import { Routes, Route } from "react-router-dom";
 import Dress from "./Dress";
 import Skirt from "./Skirt";
@@ -15,7 +14,7 @@ function ContentPage(props) {
 
   return (
     <div>
-      <div className={cl.Wrapper}>
+      <div>
           <Routes>
             <Route path='/' element={<HomePage/>}/>
             <Route path='/dress' element={<Dress/>}/>

@@ -1,7 +1,8 @@
 import React from "react";
 import cl from './BasketPage.module.css';
 import ItemList from "./ItemList/ItemList";
-import Payment from "./Payment/Payment"
+import Payment from "./Payment/Payment";
+import EmptyBasket from "./EmptyBasket/EmptyBasket"
 
 
 import { useSelector } from "react-redux";
@@ -19,7 +20,10 @@ function BasketPage(props) {
             <Payment />
           </div>
         :
-        <div>корзина пуста</div>
+          <div>
+            <EmptyBasket/>
+          </div>
+          
       }
       
     </div>

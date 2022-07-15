@@ -1,6 +1,6 @@
 .Wrapper{
-    margin: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #fcf6f3;
 }

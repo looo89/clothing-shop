@@ -1,0 +1,16 @@
+.EmptyBasket{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.ImageBasket{
+    
+    height: 300px;
+    width: 300px;
+    color: purple;
+    opacity: 0.6;
+}
+.Link{
+    text-decoration: none;
+}
