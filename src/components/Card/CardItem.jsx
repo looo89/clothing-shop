@@ -23,8 +23,9 @@ function CardItem({id, categoryId,name, price, img}) {
             <div>Цена: {price}</div>
         </div>
         { IsShowFooter 
-          ?
-            <CardFooter  id={id} categoryId={categoryId} name={name} price={price} img={img}/>
+          ? <div className={cl.Footer}>
+              <CardFooter  id={id} categoryId={categoryId} name={name} price={price} img={img}/>
+            </div>
           : <div className={cl.Footer}></div>
         }
 

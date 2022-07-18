@@ -12,6 +12,7 @@ function App() {
   return (
     <div>
       <Header toggleMenu={toggleMenu} />
+      
       <ContentPage  menuActive={menuActive} toggleMenu={toggleMenu}/>
     </div>
   );

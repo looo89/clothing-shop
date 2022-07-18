@@ -7,7 +7,7 @@ import Panama from "./Panama";
 import Bags from "./Bags";
 import HomePage from "./../Home/HomePage";
 import BasketPage from "./../BasketPage/BasketPage";
-import Menu from "./../Menu/Menu"
+import Menu from "./../Menu/Menu";
 
 
 function ContentPage(props) {
