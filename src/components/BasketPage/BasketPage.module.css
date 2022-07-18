@@ -1,3 +1,7 @@
+.BasketWrapper{
+    text-align: center;
+}
+
 .Basket{
     display: flex;
     justify-content: center;

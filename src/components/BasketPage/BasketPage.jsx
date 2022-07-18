@@ -11,7 +11,7 @@ function BasketPage(props) {
   const basket= useSelector(state=> state.clothesReduser.basket)
   const totalCount= useSelector(state=> state.clothesReduser.totalCount)
   return (
-    <div >
+    <div className={cl.BasketWrapper}>
       <h1>Оформление заказа</h1>
       { totalCount
         ?
@@ -23,7 +23,6 @@ function BasketPage(props) {
           <div>
             <EmptyBasket/>
           </div>
-          
       }
       
     </div>

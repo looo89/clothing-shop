@@ -1,9 +1,9 @@
 .CardWrapper{
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 40px;
-    max-width: 300px;
-    max-height: 420px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 420px;
 }
 
 

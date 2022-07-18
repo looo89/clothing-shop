@@ -19,8 +19,9 @@ function Header(props) {
           <SearchButton className={cl.HeaderButton}/>
           <Link className={cl.BasketButtonLink} to="/basket">
             <BasketButton className={cl.HeaderButton}/>
+            <div className={cl.count}>{totalCount}</div>
           </Link>
-          <div >{totalCount}</div>
+          
         </div>
     </div>
   );

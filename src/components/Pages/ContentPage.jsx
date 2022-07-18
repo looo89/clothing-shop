@@ -22,6 +22,7 @@ function ContentPage(props) {
             <Route path='/panama' element={<Panama/>}/>
             <Route path='/bags' element={<Bags/>}/>
             <Route path='/basket' element={<BasketPage/>}/>
+            
           </Routes>
         
       </div>

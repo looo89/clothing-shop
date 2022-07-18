@@ -1,6 +1,7 @@
-import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers";
+
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ArrowDown from "./ArrowDown";
 import ArrowUp from "./ArrowUp";
 import cl from "./HomePage.module.css";
@@ -10,7 +11,12 @@ import cl from "./HomePage.module.css";
 function HomePage() {
   const [textIndex, setTextIndex]=useState(1)
   const [imgIndex, setImgIndex]= useState(1)
-  const textDivArray=[{className: cl.Text1, i: 1}, {className: cl.Text2, i:2}, {className: cl.Text3, i:3}, {className: cl.Text4, i:4} ]
+  const textDivArray=[
+      {className: cl.Text1, i: 1, text: 'Юбки', path:'/skirt'},
+      {className: cl.Text2, i:2, text: 'Головные уборы', path:'/panama'}, 
+      {className: cl.Text3, i:3, text: 'Платья', path:'/dress'}, 
+      {className: cl.Text4, i:4, text: 'Сумки', path:'/bags'} 
+    ]
   const imgDivArray = [{className: cl.Img1, i:1}, {className: cl.Img2, i: 2}, {className: cl.Img3, i: 3}, {className: cl.Img4, i:4}]
 
   const handlerUpClickArrow=()=>{
@@ -38,7 +44,9 @@ function HomePage() {
           {textDivArray.map((item) =>
             {
               if (textIndex===item.i) 
-               return <div className={`${item.className}`} key={item.i}/>
+               return <div className={`${item.className}`} key={item.i}>
+                  <Link to={item.path} className={cl.Link}>{item.text}</Link>
+                </div>
             }
           )}
         </div>

@@ -7,7 +7,8 @@
     width: 300px;
     height: 320px;
     top: 60px;
-    background-color: pink;
+    border-top: 1px solid rgb(186, 184, 184);
+    background-color: #edf1f9;
 }
 .Link{
     text-decoration: none;

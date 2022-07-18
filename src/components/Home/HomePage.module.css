@@ -13,6 +13,7 @@
     position: absolute;
     top:0;
     left:0;
+    font-size: 34px;
 }
 .sidebar > div{
     height: 100%;
@@ -24,15 +25,23 @@
 }
 .Text1{
     background-color: #e6fef6;
+    color: #00b2bc;
 }
 .Text2{
     background-color: black;
+    color: rgb(221, 209, 220);
 }
 .Text3{
     background-color:  #e9a49d;
+    color: #6b6098;
 }
 .Text4{
-    background-color: #f0174e
+    background-color: #f0174e;
+    color: #cdbada;
+}
+.Link{
+    text-decoration: none;
+    color: inherit;
 }
 .mainSlider{
     height: 100%;
@@ -85,7 +94,7 @@ button {
   .container .controls button {
     position: absolute;
     left: 35%;
-    top: 50%;
+    top: 55%;
     z-index: 100;
   }
   

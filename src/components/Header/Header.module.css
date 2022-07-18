@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: grey;
+    background-color: #edf1f9;
 }
 .HeaderButtonContainer{
     display: flex;
@@ -19,8 +19,14 @@
     margin-right: 10px;
 }
 .BasketButtonLink{
+    display: flex;
     text-decoration: none;
     color: black;
+}
+.count{
+    font-size: 20px;
+    color: red;
+
 }
 
 .MenuButton{

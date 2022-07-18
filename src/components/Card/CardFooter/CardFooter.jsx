@@ -53,7 +53,7 @@ function CardFooter({id, categoryId,name, price, img}) {
         <div className={cl.FooterBusket} onClick={addProductInBasket}>     
           {clicked 
             ? <div> товар в корзине</div>
-            : <div> добавить в карзину</div>
+            : <div> в корзину</div>
           }
          
         </div>

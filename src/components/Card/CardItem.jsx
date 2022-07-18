@@ -27,7 +27,6 @@ function CardItem({id, categoryId,name, price, img}) {
             <CardFooter  id={id} categoryId={categoryId} name={name} price={price} img={img}/>
           : <div className={cl.Footer}></div>
         }
-        
 
     </div>
   );

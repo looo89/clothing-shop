@@ -22,6 +22,11 @@ function ItemProduct({name, count, price, img, id, categoryId}) {
     dispatch(deleteProductInBasket({id, count, price}))
   }
 
+  const getCount=(count)=>{
+    if(count===1) return 'штука'
+    if(count>1 && count<5) return 'штуки'
+    else return 'штук'
+  }
 
   return (
     <div className={cl.ItemWrapper}>
@@ -31,7 +36,7 @@ function ItemProduct({name, count, price, img, id, categoryId}) {
       <div className={cl.PayWrapper}>
         <div >{name}</div>
         <div>{`${price*count}`} руб</div>
-        <div>{count} штуки</div>
+        <div>{count} {getCount(count)}</div>
         <div className={cl.AddButtonWrapper}>
           <div className={cl.AddButton} onClick={deleteProduct}>-</div>
           <div className={cl.AddButton}>{count}</div>

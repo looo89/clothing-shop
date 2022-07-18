@@ -1,7 +1,8 @@
 .CardFooter{
     display: flex;
     justify-content: center;
-    background-color: rgb(251, 227, 231);
+
+    background-color: #edf1f9;
     height: 65px;
 }
 .FooterOderWrapper{
