@@ -2,21 +2,28 @@ import React, { useState }  from "react";
 import XButton from "../../IU/XButton";
 import cl from './SearchModalWindow.module.css';
 
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { createContext } from "react";
 
 
-function SearchModalWindow({search, setSearch}) {
-  const data= useSelector(state=> state.clothesReduser.data)  
+function SearchModalWindow({search, setSearch, onChange}) { 
 
-  // const filtereredData=data.filter(obj=>{
-  //   return obj.name.toLowerCase().includes(valueInput.toLowerCase())
-  // })
-  console.log(data)
   
   const [valueInput, setValueInput]= useState('')
   const handler=(e)=>{
     setValueInput(e.target.value)
   }
+
+
+  const data= useSelector(state=> state.clothesReduser.data)
+  const filteredDataDress = data.dress.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
+  const filteredDataSkirt = data.skirt.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
+  const filteredDataBags = data.bags.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
+  const filteredDataHats = data.hats.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
+  const filteredData=[...filteredDataDress, ...filteredDataSkirt, ...filteredDataBags, ...filteredDataHats]
+  console.log(filteredData)
+
 
   return (
     <div >
@@ -29,6 +36,10 @@ function SearchModalWindow({search, setSearch}) {
           onChange={e=>handler(e)}
         /> 
         <XButton  className={cl.XButton} onClick={()=>setSearch(false)}/>
+        <Link to="/searchPage" state={{ data: filteredData }}>
+          <button type="submit">найти</button>
+        </Link>
+        
       </form>
     </div>
    
