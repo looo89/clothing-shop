@@ -1,7 +1,8 @@
 import React  from "react";
 import { useLocation } from "react-router-dom";
+import CardItem from "../Card/CardItem";
 
-import CardItem from "./../../Card/CardItem"
+import cl from './Pages.module.css';
 
 
 function SearchPage() {
@@ -11,7 +12,7 @@ function SearchPage() {
 
   return (
     <div>
-        <div >
+        <div className={cl.Wrapper}>
             {data.map(item=><CardItem
                 key={item.id}
                 id={item.id}

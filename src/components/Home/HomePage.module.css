@@ -59,16 +59,16 @@
 }
 
 .Img1{
-    background-image: url(./../../img/skirt.jpg);
+    background-image: url(./../../../public/img/skirt.jpg);
 }
 .Img2{
-    background-image: url(./../../img/hat.jpg);
+    background-image: url(./../../../public/img/hat.jpg);
 }
 .Img3{
-    background-image: url(./../../img/dress.jpg);
+    background-image: url(./../../../public/img/dress.jpg);
 }
 .Img4{
-    background-image: url(./../../img/bag.jpg);
+    background-image: url(./../../../public/img/bag.jpg);
 }
 
 

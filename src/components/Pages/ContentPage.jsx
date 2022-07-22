@@ -8,7 +8,7 @@ import Bags from "./Bags";
 import HomePage from "./../Home/HomePage";
 import BasketPage from "./../BasketPage/BasketPage";
 import Menu from "./../Menu/Menu";
-import SearchPage from "../Header/SearchPage/SearchPage";
+import SearchPage from "./SearchPage";
 
 
 function ContentPage(props) {

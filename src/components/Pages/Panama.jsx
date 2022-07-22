@@ -8,7 +8,7 @@ import CardItem from "../Card/CardItem";
 function Panama(props) {
 
     
-  const clData= useSelector(state=> state.clothesReduser.data.panama) 
+  const clData= useSelector(state=> state.clothesReduser.data.hats) 
    
 
   return (
