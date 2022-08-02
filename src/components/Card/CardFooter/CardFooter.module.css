@@ -1,13 +1,11 @@
 .CardFooter{
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
-
     background-color: #edf1f9;
     height: 65px;
 }
 .FooterOderWrapper{
     display: flex;
-    width: 150px;
     height: 65px;
 }
 .FooterOderRow{
@@ -23,10 +21,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
     height: 65px;
-}
-.FooterLink{
-    text-decoration: none;
-    color: #000;
+    margin-left: 15px;
 }

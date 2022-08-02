@@ -28,14 +28,10 @@
     color: #00b2bc;
 }
 .Text2{
-    background-color: black;
-    color: rgb(221, 209, 220);
-}
-.Text3{
     background-color:  #e9a49d;
     color: #6b6098;
 }
-.Text4{
+.Text3{
     background-color: #f0174e;
     color: #cdbada;
 }
@@ -62,12 +58,9 @@
     background-image: url(./../../../public/img/skirt.jpg);
 }
 .Img2{
-    background-image: url(./../../../public/img/hat.jpg);
-}
-.Img3{
     background-image: url(./../../../public/img/dress.jpg);
 }
-.Img4{
+.Img3{
     background-image: url(./../../../public/img/bag.jpg);
 }
 

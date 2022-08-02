@@ -20,10 +20,7 @@ function SearchModalWindow({search, setSearch, onChange}) {
   const filteredDataDress = data.dress.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
   const filteredDataSkirt = data.skirt.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
   const filteredDataBags = data.bags.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
-  const filteredDataHats = data.hats.filter(obj=> obj.name.toLowerCase().includes(valueInput.toLowerCase()))
-  const filteredData=[...filteredDataDress, ...filteredDataSkirt, ...filteredDataBags, ...filteredDataHats]
-  console.log(filteredData)
-
+  const filteredData=[...filteredDataDress, ...filteredDataSkirt, ...filteredDataBags]
 
   return (
     <div >

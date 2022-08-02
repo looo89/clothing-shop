@@ -13,14 +13,13 @@ function HomePage() {
   const [imgIndex, setImgIndex]= useState(1)
   const textDivArray=[
       {className: cl.Text1, i: 1, text: 'Юбки', path:'/skirt'},
-      {className: cl.Text2, i:2, text: 'Головные уборы', path:'/panama'}, 
-      {className: cl.Text3, i:3, text: 'Платья', path:'/dress'}, 
-      {className: cl.Text4, i:4, text: 'Сумки', path:'/bags'} 
+      {className: cl.Text2, i:2, text: 'Платья', path:'/dress'}, 
+      {className: cl.Text3, i:3, text: 'Сумки', path:'/bags'} 
     ]
-  const imgDivArray = [{className: cl.Img1, i:1}, {className: cl.Img2, i: 2}, {className: cl.Img3, i: 3}, {className: cl.Img4, i:4}]
+  const imgDivArray = [{className: cl.Img1, i:1},  {className: cl.Img2, i: 2}, {className: cl.Img3, i:3}]
 
   const handlerUpClickArrow=()=>{
-    if(textIndex===4 && imgIndex===4){
+    if(textIndex===3 && imgIndex===3){
       setTextIndex(1)
       setImgIndex(1)
     } else {
@@ -30,8 +29,8 @@ function HomePage() {
   }
   const handlerDownClickArrow=()=>{
     if(textIndex===1 && imgIndex===1){
-      setTextIndex(4)
-      setImgIndex(4)
+      setTextIndex(3)
+      setImgIndex(3)
     } else {
       setTextIndex(textIndex-1)
       setImgIndex(imgIndex-1)
