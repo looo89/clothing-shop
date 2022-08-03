@@ -3,17 +3,22 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    width: calc(100% / 3 - (10px / 2));
+    width: calc(100% / 3 - (30px / 2));
     
     height: 420px;
 }
-
-@media (max-width:870px) {
+@media (max-width:991px) {
     .CardWrapper{
-        width: calc(100% / 2 - (10px / 2));
+        width: calc(100% / 3 - (40px / 2));
     }
 }
-@media (max-width:430px) {
+
+@media (max-width:767px) {
+    .CardWrapper{
+        width: calc(100% / 2 - (30px / 2));
+    }
+}
+@media (max-width:479px) {
     .CardWrapper{
         width: calc(100% / 1 - (10px / 2));
     }

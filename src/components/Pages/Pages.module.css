@@ -3,3 +3,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+@media (min-width:991px) {
+    .Wrapper{
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+}

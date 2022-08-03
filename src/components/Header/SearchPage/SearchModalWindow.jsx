@@ -4,10 +4,10 @@ import cl from './SearchModalWindow.module.css';
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { createContext } from "react";
+import SearchButton from "../../IU/SearchButton";
 
 
-function SearchModalWindow({search, setSearch, onChange}) { 
+function SearchModalWindow({setSearch}) { 
 
   
   const [valueInput, setValueInput]= useState('')
@@ -25,21 +25,21 @@ function SearchModalWindow({search, setSearch, onChange}) {
   return (
     <div >
       <form className={cl.InputWrapper}>
-        <input 
-          className={cl.Input}
-          name = 'changeNameList'
-          value={valueInput}
-          type="text" 
-          onChange={e=>handler(e)}
-        /> 
-        <XButton  className={cl.XButton} onClick={()=>setSearch(false)}/>
-        <Link to="/searchPage" state={{ data: filteredData }}>
-          <button type="submit">найти</button>
-        </Link>
         
+        <XButton onClick={()=>setSearch(false)} className={cl.XButton}/>
+          <input 
+            className={cl.Input}
+            name = 'changeNameList'
+            value={valueInput}
+            type="text" 
+            onChange={e=>handler(e)}
+          /> 
+            <Link to="/searchPage" state={{ data: filteredData }} className={cl.LinkButton} >
+              <SearchButton type="submit" className={cl.Button}/>   
+            </Link>
+          
       </form>
     </div>
-   
   );
 }
 

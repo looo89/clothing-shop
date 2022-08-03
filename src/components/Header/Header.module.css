@@ -8,15 +8,23 @@
 }
 .HeaderButtonContainer{
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 20px;
 }
 
-.HeaderButton{
+.SearchButton{
     cursor: pointer;
     width: 30px;
     height: 30px;
     margin-left: 10px;
     margin-right: 10px;
+}
+.BasketButton{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
 }
 .BasketButtonLink{
     display: flex;
@@ -24,8 +32,11 @@
     color: black;
 }
 .count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
-    color: red;
+    color: gray;
 
 }
 
