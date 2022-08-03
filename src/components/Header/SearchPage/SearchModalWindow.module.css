@@ -17,6 +17,7 @@
     font-size: 14px;
 }
 .Button{
+    display: flex;
     box-sizing: border-box;
     width: 32px;
     height: 32px;
@@ -29,7 +30,6 @@
 }
 
 .LinkButton{
-    display: flex;
     text-decoration: none;
     color: black;
 }

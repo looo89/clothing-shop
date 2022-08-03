@@ -12,16 +12,23 @@ function SearchPage() {
 
   return (
     <div>
+      {
+        data.length
+        ?
         <div className={cl.Wrapper}>
-            {data.map(item=><CardItem
-                key={item.id}
-                id={item.id}
-                categoryId={item.categoryId}
-                name={item.name}
-                price={item.price}
-                img={item.img}
-            />)}
+          {data.map(item=><CardItem
+              key={item.id}
+              id={item.id}
+              categoryId={item.categoryId}
+              name={item.name}
+              price={item.price}
+              img={item.img}
+          />)}
         </div>
+        :
+        <div>По вашему запросу результаты не найдены</div>
+      }
+        
        
     </div>
     

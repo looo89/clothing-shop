@@ -25,19 +25,28 @@ function SearchModalWindow({setSearch}) {
   return (
     <div >
       <form className={cl.InputWrapper}>
+          <XButton onClick={()=>setSearch(false)} className={cl.XButton} />
+      
         
-        <XButton onClick={()=>setSearch(false)} className={cl.XButton}/>
           <input 
             className={cl.Input}
             name = 'changeNameList'
             value={valueInput}
             type="text" 
             onChange={e=>handler(e)}
-          /> 
-            <Link to="/searchPage" state={{ data: filteredData }} className={cl.LinkButton} >
-              <SearchButton type="submit" className={cl.Button}/>   
-            </Link>
+          />
+          {
+            valueInput
+            ? 
+              <Link to="/searchPage" state={{ data: filteredData }} className={cl.LinkButton} >
+                <SearchButton className={cl.Button}/> 
+              </Link>
+            :
+            <SearchButton className={cl.Button}/> 
+          }
           
+         
+            
       </form>
     </div>
   );
