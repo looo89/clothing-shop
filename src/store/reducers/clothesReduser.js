@@ -7,6 +7,7 @@ const UPDATE_BASKET_ITEM='UPDATE_BASKET_ITEM'
 const ADD_ONE_PRODUCT='ADD_ONE_PRODUCT'
 const DELETE_ONE_PRODUCT='DELETE_ONE_PRODUCT'
 const DELETE_PRODUCT_IN_BASKET='DELETE_PRODUCT_IN_BASKET'
+const SET_CURRENT_PRODUCT_PAGE='SET_CURRENT_PRODUCT_PAGE'
 
 
 const initialState={
@@ -16,6 +17,7 @@ const initialState={
     ],
     totalCount: 0,
     totalPrice: 0,
+    productPage: {},
 }
 
 export  const clothesReduser=(state= initialState, action)=>{
@@ -100,6 +102,16 @@ export  const clothesReduser=(state= initialState, action)=>{
                 totalPrice: state.totalPrice - (action.payload.count*action.payload.price)
             }
         }
+        case SET_CURRENT_PRODUCT_PAGE: {
+            return { ...state,
+                productPage: {
+                    id: action.payload.id, 
+                    categoryId: action.payload.categoryId,
+                    name: action.payload.name, 
+                    price: action.payload.price,
+                    img: action.payload.img}
+            }
+        }
         
     
     default: return state
@@ -114,3 +126,4 @@ export const updateBasketItem=(payload)=>({type: UPDATE_BASKET_ITEM, payload})
 export const addOneProduct=(payload)=>({type: ADD_ONE_PRODUCT, payload})
 export const deleteOneProduct=(payload)=>({type: DELETE_ONE_PRODUCT, payload})
 export const deleteProductInBasket=(payload)=>({type: DELETE_PRODUCT_IN_BASKET, payload})
+export const setCurrentProductInBasket=(payload)=>({type:SET_CURRENT_PRODUCT_PAGE, payload})

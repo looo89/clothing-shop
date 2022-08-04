@@ -8,7 +8,6 @@ import cl from './Pages.module.css';
 function SearchPage() {
   const location=useLocation()
   const data = location.state?.data;
-  console.log(data)
 
   return (
     <div>

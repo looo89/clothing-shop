@@ -8,6 +8,7 @@ import HomePage from "./../Home/HomePage";
 import BasketPage from "./../BasketPage/BasketPage";
 import Menu from "./../Menu/Menu";
 import SearchPage from "./SearchPage";
+import ProductPage from "./ProductPage/ProductPage";
 
 
 function ContentPage(props) {
@@ -21,6 +22,9 @@ function ContentPage(props) {
             <Route path='/skirt' element={<Skirt/>}/>
             <Route path='/bags' element={<Bags/>}/>
             <Route path='/basket' element={<BasketPage/>}/>
+            <Route path="product">
+              <Route path=":id" element={<ProductPage/>} />
+            </Route>
             
             <Route path='/searchPage' element={<SearchPage/>}/>
           </Routes>
